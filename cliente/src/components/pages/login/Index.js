@@ -1,21 +1,26 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Form, Button, Container, Row } from "react-bootstrap";
-import http from "../../../api";
+import Http from "../../../api";
 
 // Css import
-
 export default function LoginPage() {
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     
+    let history = useHistory();
+
     const loginSubmit = () => {
-        http.post("/user/login", {
+        Http.post("/user/login", {
             email: email,
             password: password,
           }).then((response) => {
-            alert(response)
+            const { data: { token } } = response;
+            localStorage.setItem('token', JSON.stringify(token));
+            Http.defaults.headers.authorization = `${token}`;
+            history.push('/');
+
           }).catch((err) => {alert(err)});
       };
     
@@ -34,7 +39,7 @@ export default function LoginPage() {
                         onChange={(e) => { setPassword(e.target.value); }} />
                     </Form.Group>
                     <Row className='container text-center p-2'>
-                        <Link className='p-3' to="/cadastro">Não tem cadastrado?</Link>
+                        <Link className='p-3' to="/register">Não tem cadastrado?</Link>
                         <Button variant="outline-primary" onClick={loginSubmit}>Entrar</Button>
                     </Row>
                 </Form>

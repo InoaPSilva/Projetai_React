@@ -10,7 +10,7 @@ export default function ProjetosPage() {
         http.get("/project/list").then((response) => setProjects(response.data))
     }, []);
 
-    const { message } = projects
+    const { message } = projects;
     return (
         <>
             <Row className="p-0 m-0">
@@ -42,7 +42,7 @@ export default function ProjetosPage() {
                                 </Col>
 
                             )
-                        }) : null}
+                        }) : null }
                     </Row>
                 </ColStyled>
             </Row>

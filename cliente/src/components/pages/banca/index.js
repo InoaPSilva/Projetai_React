@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Container, Button, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import http from "../../../api";
+import Http from "../../../api";
 
 export default function BoardPage() {
+
     const [projects, setProjects] = useState({});
     useEffect(() => {
-        http.get("/project/list").then((response) => setProjects(response.data))
+        Http.get("/project/list").then((response) => setProjects(response.data))
     }, []);
+    
     const { message } = projects;
     
     return (

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import http from '../api'
+import Http from '../api'
 
 export default function useGetAllProjects() {
     const [data, setData] = useState({});

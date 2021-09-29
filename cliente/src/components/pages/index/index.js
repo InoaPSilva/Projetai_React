@@ -6,12 +6,12 @@ import { MainSectionStyled } from './styled.js'
 // Listas
 import { ListTime } from "./items/listTime";
 import { ListCompanies } from "./items/listCompanies";
-import { listCarrosel } from "./items/listCarrosel";
+import { ListCarrosel } from "./items/listCarrosel";
 
 // imagens
-import LogoSenac from '../../../assets/Logo/LogoSenac.svg';
+import LogoSenac from '../../../assets/logo/logoSenac.svg'
 import Pitch from '../../../assets/imagens/pitch.jpg';
-import { listAlunos } from "./items/listAlunos.js";
+import { ListAlunos } from "./items/listAlunos.js";
 
 export default function IndexPage() {
     return (
@@ -22,7 +22,7 @@ export default function IndexPage() {
                     <p className="pt-2">Faculdade Senac Pernambuco</p>
                 </Container>
                 <Carousel className="p-5" >
-                    {listCarrosel.map((iten, index) => {
+                    {ListCarrosel.map((iten, index) => {
                         return (
                             <Carousel.Item key={index}>
                                 <Container>
@@ -51,7 +51,7 @@ export default function IndexPage() {
                     <hr />
                 </div>
                 <Row>
-                    {listAlunos.map((array, index) => {
+                    {ListAlunos.map((array, index) => {
                         return (
                             <Col key={index} className="p-5 m-4">
                                 <Image className="rounded p-4" src={array.img} fluid />
@@ -78,7 +78,7 @@ export default function IndexPage() {
                                             className="p-4 "
                                             src={item.Image}
                                             alt={item.title}
-                                            fluid>
+                                            >
                                         </Image>
                                     </Link>
                                 </Col>

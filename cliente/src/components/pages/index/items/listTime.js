@@ -1,4 +1,4 @@
-import Logo_Senac from '../../../../assets/Logo/LogoSenac.svg';
+import Logo_Senac from '../../../../assets/logo/logoSenac.svg';
 
 export const ListTime = [
     {

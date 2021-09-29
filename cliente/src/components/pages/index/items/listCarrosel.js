@@ -1,6 +1,6 @@
-import LogoSenac from '../../../../assets/Logo/LogoSenac.svg';
+import LogoSenac from '../../../../assets/logo/logoSenac.svg';
 
-export const listCarrosel = [
+export const ListCarrosel = [
     {
         'title': "O que é o projetai",
         'description': 'O ProjetAí é uma iniciativa da Faculdade SENAC - Pernambuco para apresentar os projetos integradores/unidade de extensão dos cursos de Análise e Desenvolvimento de Sistemas (ADS).',
