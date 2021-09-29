@@ -1,6 +1,6 @@
-import axios from 'axios';
+import Axios from 'axios';
 
-const http  = axios.create({
-    baseURL: "https://cientizi.herokuapp.com"
+const Http  = Axios.create({
+    baseURL: "http://localhost:4000"
 })
-export default http
+export default Http

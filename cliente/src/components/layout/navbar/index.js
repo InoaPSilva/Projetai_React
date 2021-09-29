@@ -4,8 +4,9 @@ import React from "react";
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 
 // Importação Do menu
-import { MenuItems } from "./MenuItems";
-import { BsJustify } from "react-icons/bs";
+import { NavList } from "./navBarList";
+import { isAuthenticated } from "../../../auth";
+import { BsPersonFill } from "react-icons/bs";
 
 // NavbarComponet
 export default function NavbarComponet() {
@@ -17,7 +18,7 @@ export default function NavbarComponet() {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="m-auto">
-                            {MenuItems.map((item, index) => {
+                            {NavList.map((item, index) => {
                                 return (
                                     <Nav.Link
                                         key={index}
@@ -26,14 +27,18 @@ export default function NavbarComponet() {
                                 )
                             })}
                         </Nav>
-                        <BsJustify />
                         <Nav>
-                            
-                            <NavDropdown title="Mais" className="text-Secondary">
-                                <NavDropdown.Item href="/cadastro">Registro</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-                            </NavDropdown>
+                            {console.log(isAuthenticated())}
+                            {isAuthenticated() === true ? (
+                                <BsPersonFill />
+                            ) : (
+                                <NavDropdown title="Mais" className="text-Secondary">
+
+                                    <NavDropdown.Item href="/register">Registro</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                                </NavDropdown>
+                            )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

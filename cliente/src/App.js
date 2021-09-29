@@ -4,7 +4,8 @@ import React from 'react';
 import Navbar from './components/layout/navbar';
 import FooterComponent from './components/layout/footer';
 
-import Routes from './Routes.js';
+// Importando Rotas
+import Routes from './routes.js';
 
 function App() {
   return (

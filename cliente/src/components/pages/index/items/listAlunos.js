@@ -1,6 +1,6 @@
-import LogoSenac from '../../../../assets/Logo/empresas/LogoAccenture.svg';
+import LogoSenac from '../../../../assets/logo/empresas/logoAccenture.svg';
 
-export const listAlunos = [
+export const ListAlunos = [
     {
         "title": "Liderança e Trabalho em equipe ",
         "img": LogoSenac,

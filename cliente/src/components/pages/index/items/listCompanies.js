@@ -1,5 +1,5 @@
-import LogoAccenture from '../../../../assets/Logo/empresas/LogoAccenture.svg';
-import LogoCesar from '../../../../assets/Logo/empresas/LogoCesar.svg';
+import LogoAccenture from '../../../../assets/logo/empresas/logoAccenture.svg';
+import LogoCesar from '../../../../assets/logo/empresas/logoCesar.svg';
 
 export const ListCompanies = [
     {
