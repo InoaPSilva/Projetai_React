@@ -5,10 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThemeProvider } from 'styled-components';
 import App from './App';
 
+// Palette highlighted and pure
 const colors = {
-  bgDark: '#121212',
-  bgWhite: '#00000',
-  cBlue: '#0000FF',
+  colorSky: '#CAEBF2',
+  colorCarbon: '#A9A9A9',
+  colorWatermelon: '#FF3B3F',
+  colorNeutral: '#EFEFEF',
 }
 
 ReactDOM.render(
