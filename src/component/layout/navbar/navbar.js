@@ -13,7 +13,7 @@ export default function NavbarComponent() {
         <StyledHeader>
             <NavbarStyled collapseOnSelect expand="lg">
                 <Container>
-                    <LinkStyled href="/">Projetai</LinkStyled>
+                    <LinkStyled  font="35" href="/">Projetai</LinkStyled>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="m-auto">

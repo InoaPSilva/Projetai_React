@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Picth from '../../assets/background/pitch.jpg';
-
+// import Picth from '../../assets/background/pitch.jpg';
+/* background-image: url(${Picth}); */
 export const MainSectionStyled = styled.section`
-    background-image: url(${Picth});
+    
     padding: 40px 0;
 `
 
