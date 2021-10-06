@@ -1,7 +1,6 @@
 # Projetai_React
 [Site do Projetai apenas com HTML ](https://projetai.com/)
 
-
 <p>Projeto feito para a faculdade Senac Pernambuco<p>
 O ProjetAí é uma iniciativa da Faculdade Senac Pernambuco para apresentar os projetos integradores, unidade de extensão dos cursos de Análise e Desenvolvimento de Sistemas (ADS).
  
