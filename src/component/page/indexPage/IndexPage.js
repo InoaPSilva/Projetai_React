@@ -1,9 +1,11 @@
 import React from "react";
-import { Container, Col, Row, Image, Button, Carousel, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { MainSectionStyled } from './styledIndex.js'
 
-// Listas
+// StyledComponent and React Booststrap 
+import { Container, Col, Row, Image, Button, Carousel, Card } from "react-bootstrap";
+import { MainSectionStyled } from '../../../styled/pages/IndexStyled.js'
+
+// Lists 
 import { ListTime } from "./listTime";
 import { ListCompanies } from "./listEmpresas";
 import { ListCarrosel } from "./listCarrosel";

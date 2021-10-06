@@ -1,15 +1,14 @@
 import React from "react";
 
-import { Col, Container } from "react-bootstrap";
-import { DivStyled, RowStyled } from "./styledFooter";
+import { Col, Container, Row } from "react-bootstrap";
 
 // FooterComponent
 export default function FooterComponent() {
     return (
         <>
-            <DivStyled color="212121">
+            <div>
                 <Container>
-                    <RowStyled  className="text-white text-center p-4">
+                    <Row className="text-white text-center p-4">
                         <Col>
                             <h1>Time de desenvolvimento: </h1>
                         </Col>
@@ -33,9 +32,9 @@ export default function FooterComponent() {
                             <h4 className="h4">®Projetaí 2021 - All Rights Reserved.</h4>
 
                         </Col>
-                    </RowStyled>
+                    </Row>
                 </Container>
-            </DivStyled>
+            </div>
         </>
     )
 }

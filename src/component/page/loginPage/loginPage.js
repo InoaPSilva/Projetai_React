@@ -24,7 +24,7 @@ export default function LoginPage() {
     
     return (    
         <>
-            <Container className="p-5 bg-light rounded">
+            <Container className="p-5 m-5 bg-light rounded">
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Endereço de Email</Form.Label>
