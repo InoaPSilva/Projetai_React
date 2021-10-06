@@ -1,3 +1,4 @@
+// Color theme highlighted and pure
 const theme = {
     colors: {
         cSky: '#CAEBF2',

@@ -3,7 +3,7 @@ import React from "react";
 // Import  Styled Components 
 import { ThemeProvider } from 'styled-components';
 import { ColorBackground } from "./styledApp";
-import { GlobalStyles } from "./styled/layout/Global";
+import { GlobalStyles } from "./styled/Global";
 
 // Import Components
 import NavbarComponent from "./component/layout/navbar/Navbar";

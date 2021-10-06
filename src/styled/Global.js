@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  /* Falta definir a fonte do montserrat*/
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
 
     /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
@@ -25,15 +26,13 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+    font-family: 'Roboto', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     vertical-align: baseline;
   }
 
   body {
     background: ${({ theme }) => theme.colors.cSky};
     color: hsl(192, 100%, 9%);
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.15em;
     margin: 0;
   }
