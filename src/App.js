@@ -16,13 +16,14 @@ import theme from "./styled/ThemesStyled";
 export default function App() {
   return (
     <>
-    {/* Cria temas para poder utilizar  */}
+      {/* Cria temas para poder utilizar  */}
       <ThemeProvider theme={theme}>
+
         {/* Aplica o estilo global */}
         <GlobalStyles />
         <NavbarComponent />
         <ColorBackground>
-        {/* Listagem de rotas + rotas privadas */}
+          {/* Listagem de rotas + rotas privadas */}
           <Routes />
         </ColorBackground>
         <FooterComponent />
