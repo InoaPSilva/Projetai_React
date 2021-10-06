@@ -22,6 +22,7 @@ export default function App() {
         <GlobalStyles />
         <NavbarComponent />
         <ColorBackground>
+        {/* Listagem de rotas + rotas privadas */}
           <Routes />
         </ColorBackground>
         <FooterComponent />
