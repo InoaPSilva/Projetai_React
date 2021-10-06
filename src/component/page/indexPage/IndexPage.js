@@ -14,6 +14,7 @@ import { ListAlunos } from "./listAlunos";
 // imagens
 import LogoSenac from '../../../assets/logo/empresas/logoSenac.svg'
 import Pitch from '../../../assets/background/pitch.jpg';
+import LinkStyled from "../../../styled/layout/LinkStyled.js";
 
 
 export default function IndexPage() {
@@ -92,7 +93,7 @@ export default function IndexPage() {
             </Container>
             <Container>
                 <div>
-                    <h3 className="h3 mt-5"><Link to='/time'>Time de desenvolvimento</Link></h3>
+                    <Link to='/time'><LinkStyled font="40">Time de desenvolvimento</LinkStyled></Link>
                     <hr />
                 </div>
                 <Row>

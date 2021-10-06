@@ -6,6 +6,6 @@ export const IsAuthenticated = () => {
         const { data: { Token } } = response;
         console.log(Token)
     }).catch((response) => {
-        console.log('Error');
+        console.log('Error');   
     })
 }
