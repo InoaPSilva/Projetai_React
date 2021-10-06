@@ -1,28 +1,24 @@
 import React from "react";
 
+// Import  Styled Components 
 import { ThemeProvider } from 'styled-components';
-import FooterComponent from "./component/layout/footer/Footer";
+import { ColorBackground } from "./styledApp";
 import { GlobalStyles } from "./styled/layout/Global";
+
 // Import Components
 import NavbarComponent from "./component/layout/navbar/Navbar";
+import FooterComponent from "./component/layout/footer/Footer";
 import Routes from "./Routes";
-import { ColorBackground } from "./styledApp";
 
 // Palette highlighted and pure
-const theme = {
-  colors: {
-    cSky: '#CAEBF2',
-    cCarbon: '#A9A9A9',
-    cWatermelon: '#FF3B3F',
-    cNeutral: '#EFEFEF',
-    cWhite: '#FFFFFF'
-  }
-}
+import theme from "./styled/ThemesStyled";
 
 export default function App() {
   return (
     <>
+    {/* Cria temas para poder utilizar  */}
       <ThemeProvider theme={theme}>
+        {/* Aplica o estilo global */}
         <GlobalStyles />
         <NavbarComponent />
         <ColorBackground>
