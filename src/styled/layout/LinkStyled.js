@@ -9,7 +9,7 @@ const LinkStyled = styled.a`
     transition: 0.6s;
     border-radius: 5px;
     &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
         background-color: ${({ theme }) => theme.colors.cOrange};
         border-radius: 5px;
     }
