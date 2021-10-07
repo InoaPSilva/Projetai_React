@@ -2,7 +2,7 @@ import React from "react";
 
 // Import components from react-bootstrap
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
-import { StyledHeader, NavbarStyled } from "../../../styled/components/HeaderStyled";
+import { StyledHeader, NavbarStyled, NavBrandStlyled } from "../../../styled/components/HeaderStyled";
 import LinkStyled from "../../../styled/layout/LinkStyled";
 
 // Import  the menu
@@ -13,7 +13,7 @@ export default function NavbarComponent() {
         <StyledHeader>
             <NavbarStyled collapseOnSelect expand="lg">
                 <Container>
-                    <LinkStyled  font="35" href="/">Projetai</LinkStyled>
+                    <NavBrandStlyled className="p-3 rounded" href="/">Projetai</NavBrandStlyled>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="m-auto">
