@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 import { Form, Button, Container, Row } from "react-bootstrap";
 import Http from "../../../Api";
@@ -9,16 +10,23 @@ export default function LoginPage() {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
 
+    const saveToken = (response) => {
+        const { data: { token } } = response;
+            localStorage.setItem('token', token);
+            Http.defaults.headers.authorization = `${token}`;
+            console.log(localStorage.token);
+        
+    }
     // Faltar por o alerta
     const loginSubmit = () => {
         Http.post("/user/login", {
             email: email,
             password: password,
         }).then((response) => {
-            const { data: { token } } = response;
-            localStorage.setItem('token', token);
-            Http.defaults.headers.authorization = `${token}`;
-            alert("Login feito ")
+            saveToken(response)
+            return(
+                <Redirect to="/register" />
+            )
         }).catch((err) => {alert(err)});
     };
     

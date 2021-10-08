@@ -2,6 +2,7 @@ import React from "react";
 
 // Import components from react-bootstrap
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
+import { IsAuthenticated } from "../../../Auth";
 import { StyledHeader, NavbarStyled, NavBrandStlyled } from "../../../styled/components/HeaderStyled";
 import LinkStyled from "../../../styled/layout/LinkStyled";
 
@@ -13,7 +14,7 @@ export default function NavbarComponent() {
         <StyledHeader>
             <NavbarStyled collapseOnSelect expand="lg">
                 <Container>
-                    <NavBrandStlyled className="p-3 rounded" href="/">Projetai</NavBrandStlyled>
+                    <NavBrandStlyled href="/">Projetai</NavBrandStlyled>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="m-auto">
@@ -26,6 +27,7 @@ export default function NavbarComponent() {
                                 )
                             })}
                         </Nav>
+                        {IsAuthenticated()}
                         <Nav>
 
                             {/* Mudar para um icone usando React icons :D */}
