@@ -2,14 +2,13 @@ import React from "react";
 
 // Import components from react-bootstrap
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
-import { IsAuthenticated } from "../../../Auth";
 import { StyledHeader, NavbarStyled, NavBrandStlyled } from "../../../styled/components/HeaderStyled";
 import LinkStyled from "../../../styled/layout/LinkStyled";
 
 // Import  the menu
 import { NavList } from "./navList";
 
-export default function NavbarComponent() {
+function NavbarComponent() {
     return (
         <StyledHeader>
             <NavbarStyled collapseOnSelect expand="lg">
@@ -27,9 +26,7 @@ export default function NavbarComponent() {
                                 )
                             })}
                         </Nav>
-                        {IsAuthenticated()}
                         <Nav>
-
                             {/* Mudar para um icone usando React icons :D */}
                             <NavDropdown title="Mais" className="">
                                 <NavDropdown.Item href="/register">Register</NavDropdown.Item>
@@ -43,3 +40,4 @@ export default function NavbarComponent() {
         </StyledHeader>
     )
 }
+export default NavbarComponent;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Button } from 'react-bootstrap';
-import { Redirect } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import Http from '../../../Api';
 
