@@ -1,4 +1,4 @@
-import LogoSenac from '../../../assets/logo/empresas/logoSenac.svg';
+import LogoSenac from '../../../assets/logo/empresas/logoSenacPreto.svg';
 
 export const ListCarrosel = [
     {

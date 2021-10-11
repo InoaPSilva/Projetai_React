@@ -15,6 +15,7 @@ import { ListAlunos } from "./listAlunos";
 import LogoSenac from '../../../assets/logo/empresas/logoSenac.svg'
 import Pitch from '../../../assets/background/pitch.jpg';
 import LinkStyled from "../../../styled/layout/LinkStyled.js";
+import TitleStyled from "../../../styled/layout/TitleStyled.js";
 
 
 export default function IndexPage() {
@@ -32,7 +33,7 @@ export default function IndexPage() {
                                 <Container>
                                     <Row>
                                         <Col xs={8} className="m-auto" md={5}>
-                                            <h2 className="h2">{iten.title}</h2>
+                                            <TitleStyled >{iten.title}</TitleStyled>
                                             <hr className="rounded" />
                                             <p>{iten.description}</p>
                                         </Col>
@@ -93,7 +94,7 @@ export default function IndexPage() {
             </Container>
             <Container>
                 <div>
-                    <Link to='/time'><LinkStyled font="40">Time de desenvolvimento</LinkStyled></Link>
+                    <LinkStyled font="40"><Link to='/time'>Time de desenvolvimento</Link></LinkStyled>
                     <hr />
                 </div>
                 <Row>
