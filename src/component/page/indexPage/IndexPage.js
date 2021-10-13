@@ -2,13 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // StyledComponent and React Booststrap 
-import { Container, Col, Row, Image, Button, Carousel, Card } from "react-bootstrap";
+import { Container, Col, Row, Image, Button, Card } from "react-bootstrap";
 import { MainSectionStyled } from '../../../styled/pages/IndexStyled.js'
 
 // Lists 
 import { ListTime } from "./listTime";
 import { ListCompanies } from "./listEmpresas";
-import { ListCarrosel } from "./listCarrosel";
 import { ListAlunos } from "./listAlunos";
 
 // imagens
@@ -26,27 +25,19 @@ export default function IndexPage() {
                     <Image src={LogoSenac} height="100px" className="ml-auto" />
                     <p className="pt-2">Faculdade Senac Pernambuco</p>
                 </Container>
-                <Carousel className="p-5" >
-                    {ListCarrosel.map((iten, index) => {
-                        return (
-                            <Carousel.Item key={index}>
-                                <Container>
-                                    <Row>
-                                        <Col xs={8} className="m-auto" md={5}>
-                                            <TitleStyled >{iten.title}</TitleStyled>
-                                            <hr className="rounded" />
-                                            <p>{iten.description}</p>
-                                        </Col>
-                                        <Col xs={6} md={2} />
-                                        <Col xs={8} md={5} className="text-center" >
-                                            <Image src={iten.img} className="p-5" fluid />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Carousel.Item>
-                        )
-                    })}
-                </Carousel>
+                <Container>
+                        <Row>
+                            <Col xs={5} >
+                                <TitleStyled >O que é o projetai</TitleStyled>
+                                <hr />
+                                <p>O ProjetAí é uma iniciativa da Faculdade SENAC - Pernambuco para apresentar os projetos integradores/unidade de extensão dos cursos de Análise e Desenvolvimento de Sistemas (ADS).</p>
+                            </Col>
+                            <Col xs={1} /> 
+                            <Col xs={6}>
+                                <Image src={LogoSenac} className="p-5" fluid />
+                            </Col>
+                        </Row>
+                </Container>
             </MainSectionStyled>
 
             {/* Empresas */}
@@ -77,13 +68,13 @@ export default function IndexPage() {
                         {ListCompanies.map((item, index) => {
                             return (
                                 <Col key={index} xs={6} md={4}>
-                                    <Link to={item.link} className="align-items-center "> 
+                                    <Link to={item.link} className="align-items-center ">
                                         <Image
                                             style={{ height: "15rem" }}
                                             className="p-4 "
                                             src={item.Image}
                                             alt={item.title}
-                                            >
+                                        >
                                         </Image>
                                     </Link>
                                 </Col>
