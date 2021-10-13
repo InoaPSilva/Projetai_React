@@ -2,18 +2,18 @@ import React from "react";
 
 // Import components from react-bootstrap
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
-import { StyledHeader, NavbarStyled } from "../../../styled/components/HeaderStyled";
+import { StyledHeader, NavbarStyled, NavBrandStlyled } from "../../../styled/components/HeaderStyled";
 import LinkStyled from "../../../styled/layout/LinkStyled";
 
 // Import  the menu
 import { NavList } from "./navList";
 
-export default function NavbarComponent() {
+function NavbarComponent() {
     return (
         <StyledHeader>
             <NavbarStyled collapseOnSelect expand="lg">
                 <Container>
-                    <LinkStyled  font="35" href="/">Projetai</LinkStyled>
+                    <NavBrandStlyled href="/">Projetai</NavBrandStlyled>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="m-auto">
@@ -27,7 +27,6 @@ export default function NavbarComponent() {
                             })}
                         </Nav>
                         <Nav>
-
                             {/* Mudar para um icone usando React icons :D */}
                             <NavDropdown title="Mais" className="">
                                 <NavDropdown.Item href="/register">Register</NavDropdown.Item>
@@ -41,3 +40,4 @@ export default function NavbarComponent() {
         </StyledHeader>
     )
 }
+export default NavbarComponent;
