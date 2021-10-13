@@ -40,10 +40,10 @@ export default function IndexPage() {
                 </Container>
             </MainSectionStyled>
 
-            {/* Empresas */}
+            {/* Alunos */}
             <Container>
                 <div>
-                    <h3 className="h3 mt-5">No que afeta os alunos?</h3>
+                    <TitleStyled className="mt-5">No que afeta os alunos?</TitleStyled>
                     <hr />
                 </div>
                 <Row>
@@ -64,13 +64,13 @@ export default function IndexPage() {
                         <h3 className="h3 mt-5">As Empresas Conosco</h3>
                         <hr />
                     </div>
-                    <Row>
+                    <Row >
                         {ListCompanies.map((item, index) => {
                             return (
                                 <Col key={index} xs={6} md={4}>
                                     <Link to={item.link} className="align-items-center ">
                                         <Image
-                                            style={{ height: "15rem" }}
+                                            style={{ height: "14rem", width: "15rem",  }}
                                             className="p-4 "
                                             src={item.Image}
                                             alt={item.title}

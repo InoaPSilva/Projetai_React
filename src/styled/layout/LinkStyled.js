@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-// Tem como colocar fonte dinamica
-// Usando props ainda vou fazer isso 
+// Warning using tag a 
 const LinkStyled = styled.a`
     color: ${({ theme }) => theme.colors.cBlue};
     font-size: ${(props) => `${props.font}px`};
