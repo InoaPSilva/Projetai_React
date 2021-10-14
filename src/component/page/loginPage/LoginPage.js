@@ -6,8 +6,8 @@ import Http from "../../../Api";
 // Css import
 export default function LoginPage() {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
 
   
     // Faltar por o alerta
@@ -20,7 +20,7 @@ export default function LoginPage() {
             localStorage.setItem('token', token);
             Http.defaults.headers.authorization = `${token}`;
             return (
-                <Redirect to="/register" />
+                <Redirect to="/"/>
             )
         }).catch((err) => { alert(err) });
     };

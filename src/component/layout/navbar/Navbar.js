@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // Import components from react-bootstrap
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 import { StyledHeader, NavbarStyled, NavBrandStlyled } from "../../../styled/components/HeaderStyled";
 import LinkStyled from "../../../styled/layout/LinkStyled";
+import { ThemeContext } from "styled-components";
 
 // Import  the menu
 import { NavList } from "./navList";
 
 function NavbarComponent() {
+    
+    const { colors } = useContext(ThemeContext);
+
     return (
         <StyledHeader>
             <NavbarStyled collapseOnSelect expand="lg">
@@ -22,7 +26,11 @@ function NavbarComponent() {
                                     <LinkStyled 
                                         key={index}
                                         className={item.cName}
-                                        href={item.url}>{item.title}</LinkStyled>
+                                        href={item.url}
+                                        color={colors.cPurple}
+                                        >
+                                            {item.title}
+                                        </LinkStyled>
                                 )
                             })}
                         </Nav>

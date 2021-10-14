@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 // StyledComponent and React Booststrap 
 import { Container, Col, Row, Image, Button, Card } from "react-bootstrap";
 import { MainSectionStyled } from '../../../styled/pages/IndexStyled.js'
+import LinkStyled from "../../../styled/layout/LinkStyled.js";
+import TitleStyled from "../../../styled/layout/TitleStyled.js";
 
 // Lists 
 import { ListTime } from "./listTime";
@@ -13,8 +15,6 @@ import { ListAlunos } from "./listAlunos";
 // imagens
 import LogoSenac from '../../../assets/logo/empresas/logoSenac.svg'
 import Pitch from '../../../assets/background/pitch.jpg';
-import LinkStyled from "../../../styled/layout/LinkStyled.js";
-import TitleStyled from "../../../styled/layout/TitleStyled.js";
 
 
 export default function IndexPage() {
