@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 // Warning using tag a 
 const LinkStyled = styled.a`
-    color: ${({ theme }) => theme.colors.cBlue};
+    color: ${({ theme }) => theme.colors.cPurple};
     font-size: ${(props) => `${props.font}px`};
+    font-weight: bold;
     text-decoration: none;
-    transition: 0.6s;
+    transition: 0.5s;
     border-radius: 5px;
     &:hover {
-        opacity: 0.9;
         background-color: ${({ theme }) => theme.colors.cOrange};
         border-radius: 5px;
     }
