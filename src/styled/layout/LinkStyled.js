@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
-// Tem como colocar fonte dinamica
-// Usando props ainda vou fazer isso 
+// Warning using tag a 
 const LinkStyled = styled.a`
-    color: ${({ theme }) => theme.colors.cWatermelon};
+    color: ${({ theme }) => theme.colors.cBlue};
     font-size: ${(props) => `${props.font}px`};
     text-decoration: none;
+    transition: 0.6s;
+    border-radius: 5px;
     &:hover {
-        opacity: 0.8;
+        opacity: 0.9;
+        background-color: ${({ theme }) => theme.colors.cOrange};
+        border-radius: 5px;
     }
 `
+
 export default LinkStyled;
