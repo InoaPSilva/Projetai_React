@@ -1,24 +1,28 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
+import history from './History';
 
 // Import Components
 import IndexPage from "./component/page/indexPage/IndexPage";
 import LoginPage from "./component/page/loginPage/LoginPage";
 import ProjectPage from "./component/page/ProjectPage";
 import RegisterPage from "./component/page/registerPage/RegisterPage";
+import userProfile from "./usersPage/userProfile";
 
 
 // Todas as rotas 
 const Routes = () => {
     return (
-        <BrowserRouter>
+        <Router history={history} >
             <Switch>
                 <Route exact path="/" component={IndexPage} />
                 <Route path="/register" component={RegisterPage} />
                 <Route path="/login" component={LoginPage} />
                 <Route path="/projetos" component={ProjectPage} />
+                <Route path="/perfil" component={userProfile} />
             </Switch>
-        </BrowserRouter>
+        </Router>
     )
 };
+
 export default Routes;

@@ -2,7 +2,7 @@ import { Navbar } from 'react-bootstrap'
 import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
-    background-color: ${({ theme }) => theme.colors.cWhite};
+    background-color: ${( props) => props.color};
 `
 export const NavbarStyled = styled(Navbar)`
     

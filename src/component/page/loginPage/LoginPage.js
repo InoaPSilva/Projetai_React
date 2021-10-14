@@ -1,30 +1,14 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Form, Button, Container, Row } from "react-bootstrap";
-import Http from "../../../Api";
 
 // Css import
 export default function LoginPage() {
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
-
-  
-    // Faltar por o alerta
-    const loginSubmit = () => {
-        Http.post("/user/login", {
-            email: email,
-            password: password,
-        }).then((response) => {
-            const { data: { token } } = response;
-            localStorage.setItem('token', token);
-            Http.defaults.headers.authorization = `${token}`;
-            return (
-                <Redirect to="/"/>
-            )
-        }).catch((err) => { alert(err) });
-    };
-
+    console.log(email)
+    console.log(password)
     return (
         <>
             <Container className="p-5 m-5 bg-light rounded">
@@ -41,7 +25,7 @@ export default function LoginPage() {
                     </Form.Group>
                     <Row className='container text-center p-2'>
                         <Link className='p-3' to="/register">Não tem cadastrado?</Link>
-                        <Button variant="outline-primary" onClick={loginSubmit}>Entrar</Button>
+                        <Button variant="outline-primary">Entrar</Button>
                     </Row>
                 </Form>
             </Container>

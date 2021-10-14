@@ -14,7 +14,7 @@ function NavbarComponent() {
     const { colors } = useContext(ThemeContext);
 
     return (
-        <StyledHeader>
+        <StyledHeader color={'#ffffff'}>
             <NavbarStyled collapseOnSelect expand="lg">
                 <Container>
                     <NavBrandStlyled href="/">Projetai</NavBrandStlyled>
