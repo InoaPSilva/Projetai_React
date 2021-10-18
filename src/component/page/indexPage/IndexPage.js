@@ -58,6 +58,8 @@ export default function IndexPage() {
                     })}
                 </Row>
             </Container>
+
+            {/* Empresas */}
             <Container>
                 <div>
                     <div>
@@ -83,6 +85,8 @@ export default function IndexPage() {
                     </Row>
                 </div>
             </Container>
+
+            {/* Time de desenvolvimento */}
             <Container>
                 <div>
                     <LinkStyled font="40"><Link to='/time'>Time de desenvolvimento</Link></LinkStyled>
