@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Card, Button, ListGroup, Container } from 'react-bootstrap';
-import Http from '../../Api'
+import Http from '../../services/Api';
 
 export default function ProjectPage() {
     const [projects, setProjects] = useState({});

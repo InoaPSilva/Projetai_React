@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Http from "../Api";
+import Http from "../services/Api";
 
 export default function UserProfile() {
 

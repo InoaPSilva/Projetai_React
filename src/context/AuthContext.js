@@ -1,11 +1,13 @@
 import React, { createContext, useState } from "react";
-import Http from "../Api";
+import { useCallback } from "react";
+import Http from "../services/Api";
 
 const Context = createContext();
 
-function AuthPorvider({ children }) {
-    const [authenticated, setAutheticaded] = useState(false);
-    console.log
+const AuthPorvider = ({ children }) => {
+    const [authenticated, setAuthenticated] = useState(false);
+    const [user, setUser] = useState([]);
+
     async function handleLogin() {
         const { data: { token } } = await Http.post("/user/login")
             .then((token) => {
@@ -17,15 +19,25 @@ function AuthPorvider({ children }) {
                 alert(err);
             });
     }
+
+    const signIn = useCallback(async ({ username, password }) => {
+        const response = await await Http.post('', username, password)
+        const { token } = response.data;
+        localStorage.setItem('token', token);
+        Http.defaults.headers.authorization = `${token}`;
+        setAutheticaded(true);
+    }, []);
+
+    const signOut = useCallback(() => {
+        localStorage.removeItem('@DeliveryBurguer:token');
+    }, [])
+
+    return (
+        <Context.Provider value={{ signIn, signOut, authenticated, handleLogin }}>
+            {children}
+        </Context.Provider>
+    )
 }
 
-return (
-    <Context.Provider value={{ authenticated, handleLogin }}>
-        { children }
-    </Context.Provider>
-)
 
-export {
-    Context,
-    AuthPorvider
-}
+export default AuthPorvider
