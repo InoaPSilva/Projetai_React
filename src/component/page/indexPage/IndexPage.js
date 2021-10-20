@@ -68,7 +68,7 @@ export default function IndexPage() {
                         <h3 className="h3 mt-5">As Empresas Conosco</h3>
                         <hr />
                     </div>
-                    <Row >
+                    <Row className="p-0 m-0">
                         {ListCompanies.map((item, index) => {
                             return (
                                 <Col key={index} xs={6} md={4}>
