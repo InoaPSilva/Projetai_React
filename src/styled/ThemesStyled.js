@@ -1,7 +1,9 @@
 // Color theme highlighted and pure
 const theme = {
     colors: {
-        cNeutral: '#EFEFEF',
+        cNeutral: '#F4F9F9',
+        cWhiteBlue: '#CCF2F4',
+        cBlue: '#A4EBF3',
         cWhite: '#FFFFFF',
         cOrange: '#FFC75F',
         cPurple: '#845EC2',

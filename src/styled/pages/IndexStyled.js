@@ -4,13 +4,14 @@ import Background from "../../assets/background/BackgroundIndex.png";
 /* background-image: url(${Picth}); */
 export const MainSectionStyled = styled.section`
     background-image: url(${Background});
+    background-color: ${(props) => props.color};
     background-repeat: no-repeat;
     background-size: cover;
     padding: 40px 0;
 `;
 
 export const SectionAlunos = styled.section`
-    background-color: #F9F9F9;
+    background-color: ${(props) => props.color};
 `;
 
 export const SectionEmpresas = styled.section`

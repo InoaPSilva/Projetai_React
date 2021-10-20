@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 // Import  Styled Components 
 import { ThemeProvider } from 'styled-components';
@@ -11,22 +11,20 @@ import Routes from "./Routes";
 
 // Palette highlighted and pure
 import theme from "./styled/ThemesStyled";
+import { AuthPorvider } from "./context/AuthContext";
 
 export default function App() {
 
 
   return (
-    <>
-      {/* Cria temas para poder utilizar  */}
+    <AuthPorvider>
       <ThemeProvider theme={theme}>
-        {/* Aplica o estilo global */}
         <GlobalStyles />
         <NavbarComponent />
-        {/* Listagem de rotas + rotas privadas */}
         <Routes />
         <FooterComponent />
       </ThemeProvider>
-    </>
+    </AuthPorvider>
   );
 }
 

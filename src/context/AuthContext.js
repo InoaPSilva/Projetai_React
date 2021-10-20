@@ -1,43 +1,43 @@
 import React, { createContext, useState } from "react";
-import { useCallback } from "react";
+import History from "../History";
 import Http from "../services/Api";
 
-const Context = createContext();
+export const AuthContext = createContext();
 
-const AuthPorvider = ({ children }) => {
+export const AuthPorvider = ({ children }) => {
     const [authenticated, setAuthenticated] = useState(false);
-    const [user, setUser] = useState([]);
 
-    async function handleLogin() {
-        const { data: { token } } = await Http.post("/user/login")
-            .then((token) => {
-                localStorage.setItem('token', token);
-                Http.defaults.headers.authorization = `${token}`;
-                setAutheticaded(true);
-            })
-            .catch((err) => {
-                alert(err);
-            });
+    async function handleLogin(user) {
+        const { data } = await Http.post("/user/login",
+            {
+                name: user[0],
+                password: user[1]
+            }
+        )
+        const { token } = data;
+
+        if (!token) {
+            alert(data)
+        }
+        else {
+            localStorage.setItem('token', token);
+            Http.defaults.headers.authorization = `${token}`;
+            setAuthenticated(true);
+            History.push('/');
+        }
+
     }
 
-    const signIn = useCallback(async ({ username, password }) => {
-        const response = await await Http.post('', username, password)
-        const { token } = response.data;
-        localStorage.setItem('token', token);
-        Http.defaults.headers.authorization = `${token}`;
-        setAutheticaded(true);
-    }, []);
-
-    const signOut = useCallback(() => {
-        localStorage.removeItem('@DeliveryBurguer:token');
-    }, [])
+    function handleLogout() {
+        setAuthenticated(false);
+        localStorage.removeItem('token');
+        Http.defaults.headers.Authorization = undefined;
+        History.push('/');
+    }
 
     return (
-        <Context.Provider value={{ signIn, signOut, authenticated, handleLogin }}>
+        <AuthContext.Provider value={{ handleLogin, handleLogout, authenticated }}>
             {children}
-        </Context.Provider>
+        </AuthContext.Provider>
     )
 }
-
-
-export default AuthPorvider

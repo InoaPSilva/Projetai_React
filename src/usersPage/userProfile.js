@@ -1,24 +1,8 @@
-import React, { useEffect } from "react";
-import Http from "../services/Api";
+import React from "react";
 
-export default function UserProfile() {
-
-    useEffect(() => {
-        (async () => {
-            Http.get(`user/display/${localStorage.token}`)
-                .then((response) => {
-                    const { data: { messege } } = response;
-                    console.log(messege);
-                }).catch((err) => {
-                    console.log(err)
-                })
-    
-        })()
-    }, [])
-    
-
+export default function UserProfile() { 
     return (
 
-        <></>
+        <><h1>pagina do usuario</h1></>
     )
 }

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { ThemeContext } from "styled-components";
 // StyledComponent and React Booststrap 
 import { Container, Col, Row, Image, Button, Card } from "react-bootstrap";
 import { SectionAlunos, SectionEmpresas, MainSectionStyled } from '../../../styled/pages/IndexStyled.js'
@@ -18,9 +18,11 @@ import Pitch from '../../../assets/background/pitch.jpg';
 
 
 export default function IndexPage() {
+    const { colors } = useContext(ThemeContext);
+
     return (
         <>
-            <MainSectionStyled img={Pitch}>
+            <MainSectionStyled img={Pitch} color={colors.cNeutral}>
                 <Container className="text-center" >
                     <Image src={LogoSenac} height="100px" className="ml-auto" />
                     <p className="pt-2">Faculdade Senac Pernambuco</p>
@@ -41,7 +43,7 @@ export default function IndexPage() {
             </MainSectionStyled>
 
             {/* Alunos */}
-            <SectionAlunos className="pt-2">
+            <SectionAlunos className="pt-2" color={colors.cWhiteBlue}>
                 <Container>
                     <div>
                         <TitleStyled className="mt-5">No que afeta os alunos?</TitleStyled>

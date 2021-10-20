@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Form, Button, Container, Row } from "react-bootstrap";
+import { AuthContext } from "../../../context/AuthContext";
+import { Form, Button, Row } from "react-bootstrap";
 import { FormContainerStyled } from "../../../styled/pages/LoginStyled";
 
 // Css import
 export default function LoginPage() {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    console.log(email)
-    console.log(password)
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
+    const { handleLogin } = useContext(AuthContext);
+
     return (
         <>
             <FormContainerStyled className="p-5 m-5 bg-light rounded">
@@ -26,7 +27,7 @@ export default function LoginPage() {
                     </Form.Group>
                     <Row className='container text-center p-2'>
                         <Link className='p-3' to="/register">Não tem cadastrado?</Link>
-                        <Button variant="outline-primary">Entrar</Button>
+                        <Button variant="outline-primary" onClick={handleLogin([email, password])}>Entrar</Button>
                     </Row>
                 </Form>
             </FormContainerStyled>
