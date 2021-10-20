@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // StyledComponent and React Booststrap 
 import { Container, Col, Row, Image, Button, Card } from "react-bootstrap";
-import { MainSectionStyled } from '../../../styled/pages/IndexStyled.js'
+import { SectionAlunos, SectionEmpresas, MainSectionStyled } from '../../../styled/pages/IndexStyled.js'
 import LinkStyled from "../../../styled/layout/LinkStyled.js";
 import TitleStyled from "../../../styled/layout/TitleStyled.js";
 
@@ -26,41 +26,43 @@ export default function IndexPage() {
                     <p className="pt-2">Faculdade Senac Pernambuco</p>
                 </Container>
                 <Container>
-                        <Row>
-                            <Col xs={5} >
-                                <TitleStyled >O que é o projetai</TitleStyled>
-                                <hr />
-                                <p>O ProjetAí é uma iniciativa da Faculdade SENAC - Pernambuco para apresentar os projetos integradores/unidade de extensão dos cursos de Análise e Desenvolvimento de Sistemas (ADS).</p>
-                            </Col>
-                            <Col xs={1} /> 
-                            <Col xs={6}>
-                                <Image src={LogoSenac} className="p-5" fluid />
-                            </Col>
-                        </Row>
+                    <Row>
+                        <Col xs={5} >
+                            <TitleStyled >O que é o projetai</TitleStyled>
+                            <hr />
+                            <p>O ProjetAí é uma iniciativa da Faculdade SENAC - Pernambuco para apresentar os projetos integradores/unidade de extensão dos cursos de Análise e Desenvolvimento de Sistemas (ADS).</p>
+                        </Col>
+                        <Col xs={1} />
+                        <Col xs={6}>
+                            <Image src={LogoSenac} className="p-5" fluid />
+                        </Col>
+                    </Row>
                 </Container>
             </MainSectionStyled>
 
             {/* Alunos */}
-            <Container>
-                <div>
-                    <TitleStyled className="mt-5">No que afeta os alunos?</TitleStyled>
-                    <hr />
-                </div>
-                <Row>
-                    {ListAlunos.map((array, index) => {
-                        return (
-                            <Col key={index} className="p-5 m-4">
-                                <Image className="rounded p-4" src={array.img} fluid />
-                                <h5 className="h5">{array.title}</h5>
-                                <p>{array.description}</p>
-                            </Col>
-                        )
-                    })}
-                </Row>
-            </Container>
+            <SectionAlunos className="pt-2">
+                <Container>
+                    <div>
+                        <TitleStyled className="mt-5">No que afeta os alunos?</TitleStyled>
+                        <hr />
+                    </div>
+                    <Row>
+                        {ListAlunos.map((array, index) => {
+                            return (
+                                <Col key={index} className="p-5 m-4 shadow p-3 mb-5 bg-white rounded">
+                                    <Image className="rounded p-4" src={array.img} fluid />
+                                    <h5 className="h5">{array.title}</h5>
+                                    <p>{array.description}</p>
+                                </Col>
+                            )
+                        })}
+                    </Row>
+                </Container>
+            </SectionAlunos>
 
             {/* Empresas */}
-            <Container>
+            <SectionEmpresas>
                 <div>
                     <div>
                         <h3 className="h3 mt-5">As Empresas Conosco</h3>
@@ -72,7 +74,7 @@ export default function IndexPage() {
                                 <Col key={index} xs={6} md={4}>
                                     <Link to={item.link} className="align-items-center ">
                                         <Image
-                                            style={{ height: "14rem", width: "15rem",  }}
+                                            style={{ height: "14rem", width: "15rem", }}
                                             className="p-4 "
                                             src={item.Image}
                                             alt={item.title}
@@ -84,7 +86,7 @@ export default function IndexPage() {
                         })}
                     </Row>
                 </div>
-            </Container>
+            </SectionEmpresas>
 
             {/* Time de desenvolvimento */}
             <Container>
