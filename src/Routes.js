@@ -4,21 +4,38 @@ import history from './History';
 
 // Import Components
 import IndexPage from "./component/page/indexPage/IndexPage";
-import LoginPage from "./component/page/loginPage/LoginPage";
+import LoginPage from "./component/page/LoginPage";
 import ProjectPage from "./component/page/ProjectPage";
-import RegisterPage from "./component/page/registerPage/RegisterPage";
+import RegisterPage from "./component/page/RegisterPage";
 import userProfile from "./usersPage/userProfile";
+import NotFoundPage from "./component/page/NotFound";
+import Http from "./services/Api";
 
-const PrivateRoute = ({ isPrivate = false, component: Component, ...rest }) => {
-    const token = localStorage.getItem('token');
+
+const PrivateRoute = ({ isPrivate, component: Component, ...rest }) => {
+    
+    async function TokenTest() {
+        const token = localStorage.getItem('token');
+        Http.defaults.headers.authorization = `${token}`;
+        Http.get("/tokenTest").then((response) => {
+            return {data: { auth } } = response
+        }).catch((err) => {
+            return err
+        });
+    }
+
+    var auth = TokenTest()
+    console.log(auth)
     return (
-        <Route {...rest} render={props => (
-            isPrivate === !!token ? (
-                <Component { ...props} />
-            ) : (
-                <Redirect to={{ pathname: isPrivate ? '/' : '/' }} />
-            )
-        )} />
+        <Route
+            {...rest}
+            render={(props) => (
+                isPrivate === auth ? (
+                    <Component {...props} />
+                ) : (
+                    <Redirect to={{ pathname: isPrivate ? '/' : '/' }} />
+                )
+            )} />
     )
 }
 
@@ -32,7 +49,8 @@ const Routes = () => {
                 <Route path="/login" component={LoginPage} />
                 <Route path="/projetos" component={ProjectPage} />
                 <Route path="/perfil" component={userProfile} />
-                <PrivateRoute path="/a" component={ProjectPage} />
+                <PrivateRoute path="/a" component={ProjectPage} isPrivate={true} />
+                <Route path="*" component={NotFoundPage}  />
             </Switch>
         </Router>
     )

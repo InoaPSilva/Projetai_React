@@ -6,12 +6,15 @@ const LinkStyled = styled.a`
     font-size: ${(props) => `${props.font}px`};
     text-decoration: none;
     font-weight: bold;
-    transition: 0.5s;
-    border-radius: 5px;
+    border-bottom: 5px solid white;
+    transition: ease-in 0.4s;
+    transition-duration: 0.5s;
+    
     &:hover {
-        background-color: ${({ theme }) => theme.colors.cOrange};
-        border-radius: 5px;
+
+        color: ${(props) =>  props.colorLink};
+        border-color: ${(props) => props.colorDecoration};
     }
-`
+`;
 
 export default LinkStyled;

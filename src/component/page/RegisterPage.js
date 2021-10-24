@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Row, Button } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 
-import Http from "../../../services/Api";
+import Http from "../../services/Api";
 
 export default function RegisterPage() {
 

@@ -5,8 +5,9 @@ import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 import { StyledHeader, NavbarStyled, NavBrandStlyled } from "../../../styled/components/HeaderStyled";
 import LinkStyled from "../../../styled/layout/LinkStyled";
 import { ThemeContext } from "styled-components";
+import { shade } from 'polished';
 
-// Import  the menu
+// Import the menu
 import { NavList } from "./navList";
 
 function NavbarComponent() {
@@ -28,9 +29,9 @@ function NavbarComponent() {
                                         className={item.cName}
                                         href={item.url}
                                         color={colors.cPurple}
-                                        >
-                                            {item.title}
-                                        </LinkStyled>
+                                        colorLink={shade(0.20, colors.cPurple)}
+                                        colorDecoration={colors.cOrange}
+                                        >{item.title}</LinkStyled>
                                 )
                             })}
                         </Nav>

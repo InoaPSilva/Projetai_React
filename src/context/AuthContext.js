@@ -5,20 +5,21 @@ import Http from "../services/Api";
 export const AuthContext = createContext();
 
 export const AuthPorvider = ({ children }) => {
+
     const [authenticated, setAuthenticated] = useState(false);
 
     async function handleLogin(user) {
-        const { data } = await Http.post("/user/login",
-            {
-                name: user[0],
-                password: user[1]
-            }
-        )
+        const userData = {
+            email: user[0],
+            password: user[1]
+        }
+        const { data } = await Http.post("/user/login", userData)
         const { token } = data;
 
         if (!token) {
             alert(data)
         }
+
         else {
             localStorage.setItem('token', token);
             Http.defaults.headers.authorization = `${token}`;

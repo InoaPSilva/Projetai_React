@@ -1,14 +1,12 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import { Form, Button, Row } from "react-bootstrap";
-import { FormContainerStyled } from "../../../styled/pages/LoginStyled";
-
+import { FormContainerStyled } from "../../styled/pages/LoginStyled";
 // Css import
 export default function LoginPage() {
-
-    const [ email, setEmail ] = useState('');
-    const [ password, setPassword ] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const { handleLogin } = useContext(AuthContext);
 
     return (
