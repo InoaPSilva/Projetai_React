@@ -6,6 +6,7 @@ import history from './History';
 import IndexPage from "./component/page/indexPage/IndexPage";
 import LoginPage from "./component/page/LoginPage";
 import ProjectPage from "./component/page/ProjectPage";
+import ProjectList from "./component/page/IndividualProject";
 import RegisterPage from "./component/page/RegisterPage";
 import userProfile from "./usersPage/userProfile";
 import NotFoundPage from "./component/page/NotFound";
@@ -48,6 +49,7 @@ const Routes = () => {
                 <Route path="/register" component={RegisterPage} />
                 <Route path="/login" component={LoginPage} />
                 <Route path="/projetos" component={ProjectPage} />
+                <Route path="/projeto/:_id" component={ProjectList} />
                 <Route path="/perfil" component={userProfile} />
                 <PrivateRoute path="/a" component={ProjectPage} isPrivate={true} />
                 <Route path="*" component={NotFoundPage}  />

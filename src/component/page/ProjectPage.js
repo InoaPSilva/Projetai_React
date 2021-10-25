@@ -6,10 +6,11 @@ export default function ProjectPage() {
     const [projects, setProjects] = useState({});
 
     useEffect(() => {
-        Http.get("/project/list").then((response) => setProjects(response.data))
+        Http.get("/project").then((response) => setProjects(response.data))
     }, []);
 
-    const { message } = projects
+    const { message } = projects;
+    console.log(message);
     return (
         <>
             <Row className="p-0 m-0">
@@ -35,7 +36,7 @@ export default function ProjectPage() {
                                             <Card.Title className="text-center">{array.name}</Card.Title>
                                             <Card.Text className="mb-3">{array.description}
                                             </Card.Text>
-                                            <Button href="/projeto/individual" variant="primary">Go somewhere</Button>
+                                            <Button href={"/projeto/" + array._id } variant="primary">Go somewhere</Button>
                                         </Card.Body>
                                     </Card>
                                 </Col>
