@@ -8,7 +8,7 @@ import LoginPage from "./component/page/LoginPage";
 import ProjectPage from "./component/page/ProjectPage";
 import ProjectList from "./component/page/IndividualProject";
 import RegisterPage from "./component/page/RegisterPage";
-import userProfile from "./usersPage/userProfile";
+import UserProfile from "./component/authenticated/UserProfile";
 import NotFoundPage from "./component/page/NotFound";
 import Http from "./services/Api";
 
@@ -50,7 +50,7 @@ const Routes = () => {
                 <Route path="/login" component={LoginPage} />
                 <Route path="/projetos" component={ProjectPage} />
                 <Route path="/projeto/:_id" component={ProjectList} />
-                <Route path="/perfil" component={userProfile} />
+                <Route path="/perfil" component={UserProfile} />
                 <PrivateRoute path="/a" component={ProjectPage} isPrivate={true} />
                 <Route path="*" component={NotFoundPage}  />
             </Switch>

@@ -33,8 +33,8 @@ export default function ProjectPage() {
                                     <Card color="F57C00" style={{ width: '16rem' }} className="align-items-center">
                                         <Card.Img className="pt-4 rounded-circle" style={{ width: '10rem' }} variant="top" src={array.icon} />
                                         <Card.Body>
-                                            <Card.Title className="text-center">{array.name}</Card.Title>
-                                            <Card.Text className="mb-3">{array.description}
+                                            <Card.Title className="text-center">{array.title}</Card.Title>
+                                            <Card.Text className="mb-3">{array.summary}
                                             </Card.Text>
                                             <Button href={"/projeto/" + array._id } variant="primary">Go somewhere</Button>
                                         </Card.Body>

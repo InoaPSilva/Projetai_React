@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 const Http  = Axios.create({
-    baseURL: process.env.REACT_APP_API_URL
+    baseURL: "http://localhost:8089/"
 })
 
 export default Http
