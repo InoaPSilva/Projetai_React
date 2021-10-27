@@ -6,10 +6,11 @@ export default function ProjectPage() {
     const [projects, setProjects] = useState({});
 
     useEffect(() => {
-        Http.get("/project/list").then((response) => setProjects(response.data))
+        Http.get("/project").then((response) => setProjects(response.data))
     }, []);
 
-    const { message } = projects
+    const { message } = projects;
+    console.log(message);
     return (
         <>
             <Row className="p-0 m-0">
@@ -32,10 +33,10 @@ export default function ProjectPage() {
                                     <Card color="F57C00" style={{ width: '16rem' }} className="align-items-center">
                                         <Card.Img className="pt-4 rounded-circle" style={{ width: '10rem' }} variant="top" src={array.icon} />
                                         <Card.Body>
-                                            <Card.Title className="text-center">{array.name}</Card.Title>
-                                            <Card.Text className="mb-3">{array.description}
+                                            <Card.Title className="text-center">{array.title}</Card.Title>
+                                            <Card.Text className="mb-3">{array.summary}
                                             </Card.Text>
-                                            <Button href="/projeto/individual" variant="primary">Go somewhere</Button>
+                                            <Button href={"/projeto/" + array._id } variant="primary">Go somewhere</Button>
                                         </Card.Body>
                                     </Card>
                                 </Col>
