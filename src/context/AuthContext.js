@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import History from "../History";
+import History from "../services/History";
 import Http from "../services/Api";
 
 export const AuthContext = createContext();

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 // Import components from react-bootstrap
-import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Container, Image } from "react-bootstrap";
 import { StyledHeader, NavbarStyled, NavBrandStlyled } from "../../../styled/components/HeaderStyled";
 import LinkStyled from "../../../styled/layout/LinkStyled";
 import { ThemeContext } from "styled-components";
@@ -9,6 +9,7 @@ import { shade } from 'polished';
 
 // Import the menu
 import { NavList } from "./navList";
+import LogoProjetai from "../../../assets/logo/projetai/LogoProjetaiName.svg"
 
 function NavbarComponent() {
     
@@ -18,7 +19,7 @@ function NavbarComponent() {
         <StyledHeader color={'#ffffff'}>
             <NavbarStyled collapseOnSelect expand="lg">
                 <Container>
-                    <NavBrandStlyled href="/">Projetai</NavBrandStlyled>
+                    <NavBrandStlyled href="/"><Image fluid src={LogoProjetai} width="100px" alt="Logo projetai"/></NavBrandStlyled>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="m-auto">
@@ -28,8 +29,8 @@ function NavbarComponent() {
                                         key={index}
                                         className={item.cName}
                                         href={item.url}
-                                        color={colors.cPurple}
-                                        colorLink={shade(0.20, colors.cPurple)}
+                                        color={colors.cOrange}
+                                        colorLink={shade(0.30, colors.cOrange)}
                                         colorDecoration={colors.cOrange}
                                         >{item.title}</LinkStyled>
                                 )

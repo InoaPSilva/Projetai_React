@@ -9,9 +9,7 @@ const LinkStyled = styled.a`
     border-bottom: 5px solid white;
     transition: ease-in 0.4s;
     transition-duration: 0.5s;
-    
     &:hover {
-
         color: ${(props) =>  props.colorLink};
         border-color: ${(props) => props.colorDecoration};
     }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
-import history from './History';
+import history from './services/History';
 
 // Import Components
 import IndexPage from "./component/page/indexPage/IndexPage";
