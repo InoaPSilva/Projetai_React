@@ -2,7 +2,6 @@ import React from "react";
 
 // Import  Styled Components 
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from "./styled/Global";
 
 // Import Components
 import NavbarComponent from "./component/layout/navbar/Navbar";
@@ -19,10 +18,9 @@ export default function App() {
   return (
     <AuthPorvider>
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
         <NavbarComponent />
         <Routes />
-        <FooterComponent />
+        <FooterComponent  />
       </ThemeProvider>
     </AuthPorvider>
   );

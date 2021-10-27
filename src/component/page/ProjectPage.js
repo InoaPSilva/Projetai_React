@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Card, Button, ListGroup, Container } from 'react-bootstrap';
 import Http from '../../services/Api';
+import TitleStyled from '../../styled/layout/TitleStyled';
 
 export default function ProjectPage() {
     const [projects, setProjects] = useState({});
@@ -13,8 +14,8 @@ export default function ProjectPage() {
     console.log(message);
     return (
         <>
-            <Row className="p-0 m-0">
-                <Col xl="3" color="0288D1" >
+            <Row className="p-0 m-0 bg-light">
+                <Col xl="3 bg-white" >
                     <Container className="p-5">
                         <ListGroup>
                             <ListGroup.Item>1ª Periodo</ListGroup.Item>
@@ -26,6 +27,9 @@ export default function ProjectPage() {
                     </Container>
                 </Col>
                 <Col xl="9" color="7B1FA2">
+                    <div>
+                        <TitleStyled className="text-center mt-5" >Lista de projetos</TitleStyled>
+                    </div>
                     <Row>
                         {message !== undefined ? message.map((array, index) => {
                             return (
@@ -36,11 +40,10 @@ export default function ProjectPage() {
                                             <Card.Title className="text-center">{array.title}</Card.Title>
                                             <Card.Text className="mb-3">{array.summary}
                                             </Card.Text>
-                                            <Button href={"/projeto/" + array._id } variant="primary">Go somewhere</Button>
+                                            <Button href={"/projeto/" + array._id} variant="primary">Go somewhere</Button>
                                         </Card.Body>
                                     </Card>
                                 </Col>
-
                             )
                         }) : null}
                     </Row>
