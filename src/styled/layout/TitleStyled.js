@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const TitleStyled = styled.h1`
-    color: ${({ theme }) => theme.colors.cBlack};
+    color: ${(props) => props.color};
     font: ${(props) => `${props.font}px`};
 `
 export default TitleStyled

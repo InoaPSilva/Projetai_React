@@ -17,6 +17,9 @@ export const SectionAlunos = styled.section`
 export const SectionEmpresas = styled.section`
 
 `;
+export const SectionTime = styled.div`
+    background-color: #F4F9F9;
+`;
 
 export const ContainerMain = styled.section`
 

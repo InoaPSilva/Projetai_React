@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
+
 // StyledComponent and React Booststrap 
 import { Container, Col, Row, Image, Button, Card } from "react-bootstrap";
-import { SectionAlunos, SectionEmpresas, MainSectionStyled } from '../../../styled/pages/IndexStyled.js'
+import { SectionAlunos, SectionEmpresas, MainSectionStyled, SectionTime } from '../../../styled/pages/IndexStyled.js'
 import LinkStyled from "../../../styled/layout/LinkStyled.js";
 import TitleStyled from "../../../styled/layout/TitleStyled.js";
 
@@ -15,7 +16,6 @@ import { ListAlunos } from "./listAlunos";
 // imagens
 import LogoSenac from '../../../assets/logo/empresas/logoSenac.svg'
 import Pitch from '../../../assets/background/pitch.jpg';
-
 
 export default function IndexPage() {
     const { colors } = useContext(ThemeContext);
@@ -65,7 +65,7 @@ export default function IndexPage() {
 
             {/* Empresas */}
             <SectionEmpresas>
-                <div>
+                <Container>
                     <div>
                         <h3 className="h3 mt-5">As Empresas Conosco</h3>
                         <hr />
@@ -87,20 +87,26 @@ export default function IndexPage() {
                             )
                         })}
                     </Row>
-                </div>
+                </Container>
             </SectionEmpresas>
 
             {/* Time de desenvolvimento */}
-            <Container>
+            <SectionTime>
+                <Container className="pt-5">
                 <div>
-                    <LinkStyled font="40"><Link to='/time'>Time de desenvolvimento</Link></LinkStyled>
+                    <Link to='/time'><LinkStyled 
+                        color={colors.cOrange}
+                        colorLink={colors.cOrange}
+                        font="40"
+                        >Time de desenvolvimento</LinkStyled>
+                    </Link>
                     <hr />
                 </div>
-                <Row>
+                <Row className="mb-5">
                     {ListTime.map((item, index) => {
                         return (
                             <Col key={index} className='p-4'>
-                                <Card className="align-items-center " style={{ width: '17rem' }}>
+                                <Card className=" shadow align-items-center " style={{ width: '17rem' }}>
                                     <Card.Img style={{ backgroundSize: 'cover', width: '12rem', height: "12rem" }} className="rounded-circle p-3" src={item.Image} />
                                     <Card.Body>
                                         <Card.Title className="text-center">{item.Name}</Card.Title>
@@ -112,7 +118,8 @@ export default function IndexPage() {
                         )
                     })}
                 </Row>
-            </Container>
+                </Container>
+            </SectionTime>
         </>
     )
 }
