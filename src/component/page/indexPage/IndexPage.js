@@ -5,7 +5,6 @@ import { ThemeContext } from "styled-components";
 // StyledComponent and React Booststrap 
 import { Container, Col, Row, Image, Button, Card } from "react-bootstrap";
 import { SectionAlunos, SectionEmpresas, MainSectionStyled, SectionTime } from '../../../styled/pages/IndexStyled.js'
-import LinkStyled from "../../../styled/layout/LinkStyled.js";
 import TitleStyled from "../../../styled/layout/TitleStyled.js";
 
 // Lists 
@@ -94,11 +93,7 @@ export default function IndexPage() {
             <SectionTime>
                 <Container className="pt-5">
                 <div>
-                    <Link to='/time'><LinkStyled 
-                        color={colors.cOrange}
-                        colorLink={colors.cOrange}
-                        font="40"
-                        >Time de desenvolvimento</LinkStyled>
+                    <Link to='/time'>
                     </Link>
                     <hr />
                 </div>

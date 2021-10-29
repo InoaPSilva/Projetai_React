@@ -7,8 +7,8 @@ export const AuthContext = createContext();
 export const AuthPorvider = ({ children }) => {
 
     const [authenticated, setAuthenticated] = useState(false);
-
-    async function handleLogin(user) {
+    
+    const handleLogin = async (user) => {
         const userData = {
             email: user[0],
             password: user[1]

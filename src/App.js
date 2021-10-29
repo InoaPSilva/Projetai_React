@@ -6,11 +6,11 @@ import { ThemeProvider } from 'styled-components';
 // Import Components
 import NavbarComponent from "./component/layout/navbar/Navbar";
 import FooterComponent from "./component/layout/footer/Footer";
-import Routes from "./Routes";
 
 // Palette highlighted and pure
 import theme from "./styled/ThemesStyled";
 import { AuthPorvider } from "./context/AuthContext";
+import Routes from "./Routes/index";
 
 export default function App() {
 
