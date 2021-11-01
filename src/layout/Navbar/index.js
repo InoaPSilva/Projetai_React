@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 
 // Import components from react-bootstrap
 import { Nav, Navbar, NavDropdown, Container, Image } from "react-bootstrap";
-import { StyledHeader, NavbarStyled, NavBrandStlyled } from "../../../styled/components/HeaderStyled";
-import LinkStyled from "../../../styled/layout/LinkStyled";
+import { StyledHeader, NavbarStyled, NavBrandStlyled } from "./styles";
+import LinkStyled from "../../styled/layout/LinkStyled";
 import { ThemeContext } from "styled-components";
 import { shade } from 'polished';
 
 // Import the menu
 import { NavList } from "./navList";
-import LogoProjetai from "../../../assets/logo/projetai/LogoProjetaiName.svg"
+import LogoProjetai from "../../assets/logo/projetai/LogoProjetaiName.svg"
 
 function NavbarComponent() {
     
@@ -31,7 +31,7 @@ function NavbarComponent() {
                                         href={item.url}
                                         color={colors.cOrange}
                                         colorLink={shade(0.30, colors.cOrange)}
-                                        colorDecoration={colors.cOrange}
+                                        colorDecoration={colors.cBlue}
                                         >{item.title}</LinkStyled>
                                 )
                             })}

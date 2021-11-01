@@ -4,8 +4,8 @@ import React from "react";
 import { ThemeProvider } from 'styled-components';
 
 // Import Components
-import NavbarComponent from "./component/layout/navbar/Navbar";
-import FooterComponent from "./component/layout/footer/Footer";
+import NavbarComponent from "./layout/Navbar";
+import FooterComponent from "./layout/Footer";
 
 // Palette highlighted and pure
 import theme from "./styled/ThemesStyled";

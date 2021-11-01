@@ -28,7 +28,7 @@ export default function IndexPage() {
                 </Container>
                 <Container>
                     <Row>
-                        <Col xs={5} >
+                        <Col lg={5} xs={12} >
                             <TitleStyled >O que é o projetai</TitleStyled>
                             <hr />
                             <p>O ProjetAí é uma iniciativa da Faculdade SENAC - Pernambuco para apresentar os projetos integradores/unidade de extensão dos cursos de Análise e Desenvolvimento de Sistemas (ADS).</p>
